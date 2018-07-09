@@ -1,19 +1,19 @@
 // 设置请求url
-const url = '/post' // 这里改成你的
+var url = '/post' // 这里改成你的
 
 // 获取元素
-const byId = function(id) {
+var byId = function(id) {
   getDocumentById(id)
 }
 
-const submitBtn = byId('submitBtn')
-const form = byId('form')
-const file = byId('file')
-const fileBtn = byId('fileBtn')
-const pictureBox = byId('pictureBox')
+var submitBtn = byId('submitBtn')
+var form = byId('form')
+var file = byId('file')
+var fileBtn = byId('fileBtn')
+var pictureBox = byId('pictureBox')
 
 // 给选择图片按钮绑定选择图片事件
-const pictureSelect = function() {
+var pictureSelect = function() {
   file.click()
 }
 
@@ -21,11 +21,11 @@ fileBtn.addEventListener('click', pictureSelect, false)
 
 // file onchange事件 展示图片列表
 file.onchange = function() {
-  const files = file.files
+  var files = file.files
 
   if (!files.length) return window.alert('图片列表为空')
 
-  const fragment = document.createDocumentFragment()
+  var fragment = document.createDocumentFragment()
 
   Array.prototype.slice.call(files).forEach(function(file, index) {
     let imgSrc = window.URL.createObjectURL(file)
@@ -40,9 +40,9 @@ file.onchange = function() {
 }
 
 // // 提交按钮绑定事件
-// const submit = () => {
-//   const formData = new FormData(form)
-//   const xhr = new XMLHttpRequest()
+// var submit = () => {
+//   var formData = new FormData(form)
+//   var xhr = new XMLHttpRequest()
 
 //   xhr.open('POST', url)
 
