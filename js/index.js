@@ -29,7 +29,7 @@ file.onchange = function() {
 
   Array.prototype.slice.call(files).forEach(function(file, index) {
     var imgSrc = window.URL.createObjectURL(file)
-    var imgHTML = "<img src=" + imgSrc + "height='80px' width='80px'/>"
+    var imgHTML = "<img src=" + "'" + imgSrc + "'" + "height='80px' width='80px'/>"
     var imgNode = document.createElement('div')
     imgNode.innerHTML = imgHTML
     imgNode.className = 'img-wrapper'
