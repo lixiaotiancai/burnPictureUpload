@@ -3,7 +3,7 @@ var url = '/post' // 这里改成你的
 
 // 获取元素
 var byId = function(id) {
-  getDocumentById(id)
+  return document.getElementById(id)
 }
 
 var submitBtn = byId('submitBtn')
@@ -28,9 +28,9 @@ file.onchange = function() {
   var fragment = document.createDocumentFragment()
 
   Array.prototype.slice.call(files).forEach(function(file, index) {
-    let imgSrc = window.URL.createObjectURL(file)
-    let imgHTML = `<img src=${imgSrc} height='80px' width='80px'/>`
-    let imgNode = document.createElement('div')
+    var imgSrc = window.URL.createObjectURL(file)
+    var imgHTML = "<img src=" + imgSrc + "height='80px' width='80px'/>"
+    var imgNode = document.createElement('div')
     imgNode.innerHTML = imgHTML
     imgNode.className = 'img-wrapper'
     fragment.appendChild(imgNode)
