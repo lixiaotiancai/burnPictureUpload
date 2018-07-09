@@ -35,20 +35,20 @@ file.onchange = () => {
   pictureBox.appendChild(fragment)
 }
 
-// 提交按钮绑定事件
-const submit = () => {
-  const formData = new FormData(form)
-  const xhr = new XMLHttpRequest()
+// // 提交按钮绑定事件
+// const submit = () => {
+//   const formData = new FormData(form)
+//   const xhr = new XMLHttpRequest()
 
-  xhr.open('POST', url)
+//   xhr.open('POST', url)
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      window.alert(xhr.responseText)
-    } else {
-      // to do something
-    }
-  }
-  xhr.send(formData)
-}
-submitBtn.addEventListener('click', submit, false)
+//   xhr.onreadystatechange = function () {
+//     if (xhr.readyState === 4) {
+//       window.alert(xhr.responseText)
+//     } else {
+//       // to do something
+//     }
+//   }
+//   xhr.send(formData)
+// }
+// submitBtn.addEventListener('click', submit, false)
