@@ -2,7 +2,9 @@
 const url = '/post' // 这里改成你的
 
 // 获取元素
-const byId = (id) => document.getElementById(id)
+const byId = function(id) {
+  getDocumentById(id)
+}
 
 const submitBtn = byId('submitBtn')
 const form = byId('form')
@@ -11,19 +13,21 @@ const fileBtn = byId('fileBtn')
 const pictureBox = byId('pictureBox')
 
 // 给选择图片按钮绑定选择图片事件
-const pictureSelect = () => file.click()
+const pictureSelect = function() {
+  file.click()
+}
 
 fileBtn.addEventListener('click', pictureSelect, false)
 
 // file onchange事件 展示图片列表
-file.onchange = () => {
+file.onchange = function() {
   const files = file.files
 
   if (!files.length) return window.alert('图片列表为空')
 
   const fragment = document.createDocumentFragment()
 
-  Array.prototype.slice.call(files).forEach((file, index) => {
+  Array.prototype.slice.call(files).forEach(function(file, index) {
     let imgSrc = window.URL.createObjectURL(file)
     let imgHTML = `<img src=${imgSrc} height='80px' width='80px'/>`
     let imgNode = document.createElement('div')
